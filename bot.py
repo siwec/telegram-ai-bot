@@ -163,8 +163,11 @@ def setup_scheduled_posts(application: Application):
 
 # === ЗАПУСК ===
 if __name__ == "__main__":
-    if not BOT_TOKEN or BOT_TOKEN == "":
-    raise ValueError("❌ BOT_TOKEN не задан! Добавьте его в Variables на Railway.")
+    if not BOT_TOKEN or BOT_TOKEN.strip() == "":
+        raise ValueError("❌ BOT_TOKEN не задан! Добавьте его в Variables на Railway.")
+    if not DASHSCOPE_API_KEY or DASHSCOPE_API_KEY.strip() == "":
+        raise ValueError("❌ DASHSCOPE_API_KEY не задан!")
+
     app = Application.builder().token(BOT_TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
