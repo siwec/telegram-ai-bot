@@ -163,6 +163,8 @@ def setup_scheduled_posts(application: Application):
 
 # === ЗАПУСК ===
 if __name__ == "__main__":
+    if not BOT_TOKEN or BOT_TOKEN == "":
+    raise ValueError("❌ BOT_TOKEN не задан! Добавьте его в Variables на Railway.")
     app = Application.builder().token(BOT_TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
