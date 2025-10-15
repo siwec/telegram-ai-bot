@@ -10,7 +10,7 @@ from telegram.ext import (
 )
 
 # === НАСТРОЙКИ ===
-BOT_TOKEN = "8009792262:AAEdDbBdCI8zrdaPp4okZmrcK7UbqPrxz1k"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY")
 MODEL = "qwen-turbo"  # или "qwen-max"
 
