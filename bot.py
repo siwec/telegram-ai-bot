@@ -98,7 +98,7 @@ async def profile(update: Update, context: ContextTypes.DEFAULT_TYPE):
     free_used = free_trials_count.get(user_id, 0)
     bought = purchases.get(user_id, [])
     ref_code = get_ref_code(user_id)
-    ref_link = f"https://t.me/YourBot?start=ref{ref_code}"
+    ref_link = f"https://t.me/siwec_bot?start=ref{ref_code}"
     text = (
         f"📊 **Ваш профиль**\n\n"
         f"Бесплатных гайдов: {free_used}/{MAX_FREE_TRIALS}\n"
